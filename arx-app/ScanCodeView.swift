@@ -16,32 +16,54 @@ struct ScanCodeView: View {
     @State var code: String = ""
 
     var body: some View {
-        VStack {
-            Button {
-                showScanner = true
-            } label: {
-                Text("Scan QR Code")
+        HStack {
+            ZStack {
+                Image("ARRO_right")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.size.width * 0.4, alignment: .center)
+                CustomText(text: "Hey there! Scan a game code to get started.", size: UIDevice.current.userInterfaceIdiom == .pad ? 36 : 24 ) // adjust text size based on device
+                     .font(.system(size: 36))
+                     .foregroundColor(ColorConstants.arxNavy) // text color
+                     .padding()
+                     .background(RoundedRectangle(cornerRadius: 15)
+                         .foregroundColor(ColorConstants.blue1)) // background shape color
+                     .frame(maxWidth: UIScreen.main.bounds.size.width * 0.25)
+                     .transition( AnyTransition.move(edge: .leading).combined(with: AnyTransition.opacity).combined(with: .scale))
+                     .padding()
+                     .offset(x: 220, y: -250)
+//                     .tapTo(readText: step.text, offset: 20)
             }
-            
-            Button {
-                showTextField = true
-                addAnimation()
-            } label: {
-                Text("Enter Code")
-            
-            if showTextField {
-                TextField(
-                    "Enter Code",
-                    text: $code
-                )
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .border(.secondary)
+                
+            Spacer()
+            VStack {
+                Spacer()
+                LargeButton(text: "Scan QR Code") {
+                    showScanner = true
                 }
+                Spacer()
+                LargeButton(text: "Enter Code") {
+                    showTextField.toggle()
+                    addAnimation()
+                }
+                
+                if showTextField {
+                    HStack {
+                        CodeTextField(text: code)
+                        Image(systemName: "arrow.forward")
+                            .padding(5)
+                            .foregroundColor(ColorConstants.arxNavy)
+                            .background(ColorConstants.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                                            }
+                    .frame(width: 300, height: 50, alignment: .center)
+                }
+                Spacer()
             }
-        }
-        .sheet(isPresented: $showScanner) {
-            CodeScannerView(codeTypes: [.qr], completion: handleScan(result:))
+            .sheet(isPresented: $showScanner) {
+                CodeScannerView(codeTypes: [.qr], completion: handleScan(result:))
+            }
+            Spacer() // HStack spacer
         }
     }
     
@@ -77,6 +99,7 @@ struct ScanCodeView: View {
 struct QRCodeScannerView_Previews: PreviewProvider {
     static var previews: some View {
         ScanCodeView(code: "111111")
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
 

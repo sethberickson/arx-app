@@ -24,6 +24,11 @@
 		DB64086128518FA000C0B739 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64086028518FA000C0B739 /* RestAPI.swift */; };
 		DB640865285191BF00C0B739 /* ScanCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB640864285191BF00C0B739 /* ScanCodeView.swift */; };
 		DB6408682851969600C0B739 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DB6408672851969600C0B739 /* CodeScanner */; };
+		DB64086C2852881E00C0B739 /* NavigateToViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64086B2852881E00C0B739 /* NavigateToViewButton.swift */; };
+		DB64086E2852887900C0B739 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64086D2852887900C0B739 /* View+Extensions.swift */; };
+		DB6408702852FA8800C0B739 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64086F2852FA8800C0B739 /* LargeButton.swift */; };
+		DB6408732852FCF600C0B739 /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6408722852FCF600C0B739 /* CodeTextField.swift */; };
+		DB640875285302CF00C0B739 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB640874285302CF00C0B739 /* CustomText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 		DB64085E28518F7000C0B739 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		DB64086028518FA000C0B739 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		DB640864285191BF00C0B739 /* ScanCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeView.swift; sourceTree = "<group>"; };
+		DB64086B2852881E00C0B739 /* NavigateToViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToViewButton.swift; sourceTree = "<group>"; };
+		DB64086D2852887900C0B739 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		DB64086F2852FA8800C0B739 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		DB6408722852FCF600C0B739 /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
+		DB640874285302CF00C0B739 /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 		DB6408392847134300C0B739 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB640869285287F900C0B739 /* Components */,
 				DB6408632851914C00C0B739 /* Transitions */,
 				DB6408622851914000C0B739 /* Animations */,
 				DB640841284725B100C0B739 /* LaunchScreenView.swift */,
@@ -135,6 +146,7 @@
 				DB64084D284E640C00C0B739 /* Colors */,
 				DB640850284E650A00C0B739 /* Constants.swift */,
 				DB64086028518FA000C0B739 /* RestAPI.swift */,
+				DB64086D2852887900C0B739 /* View+Extensions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -161,6 +173,33 @@
 				DB640849284E5BB400C0B739 /* SlideTransition.swift */,
 			);
 			name = Transitions;
+			sourceTree = "<group>";
+		};
+		DB640869285287F900C0B739 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DB6408712852FCD300C0B739 /* Text */,
+				DB64086A2852880500C0B739 /* Buttons */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		DB64086A2852880500C0B739 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				DB64086B2852881E00C0B739 /* NavigateToViewButton.swift */,
+				DB64086F2852FA8800C0B739 /* LargeButton.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		DB6408712852FCD300C0B739 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				DB6408722852FCF600C0B739 /* CodeTextField.swift */,
+				DB640874285302CF00C0B739 /* CustomText.swift */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,18 +279,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB64085F28518F7000C0B739 /* StoryViewModel.swift in Sources */,
+				DB6408702852FA8800C0B739 /* LargeButton.swift in Sources */,
 				DB640855284EB35B00C0B739 /* GameSession.swift in Sources */,
 				DB64084A284E5BB400C0B739 /* SlideTransition.swift in Sources */,
+				DB6408732852FCF600C0B739 /* CodeTextField.swift in Sources */,
 				DB64084F284E641A00C0B739 /* ColorHex.swift in Sources */,
 				DB640842284725B100C0B739 /* LaunchScreenView.swift in Sources */,
 				DB64085D28518D8100C0B739 /* Theme.swift in Sources */,
+				DB64086E2852887900C0B739 /* View+Extensions.swift in Sources */,
 				DB640865285191BF00C0B739 /* ScanCodeView.swift in Sources */,
 				DB64082C2845BD1400C0B739 /* ContentView.swift in Sources */,
 				DB640859284EB49200C0B739 /* GradientBackground.swift in Sources */,
 				DB640857284EB3C000C0B739 /* WelcomeScreen.swift in Sources */,
 				DB640851284E650A00C0B739 /* Constants.swift in Sources */,
+				DB640875285302CF00C0B739 /* CustomText.swift in Sources */,
 				DB64086128518FA000C0B739 /* RestAPI.swift in Sources */,
 				DB640847284A70EB00C0B739 /* ARXApp.swift in Sources */,
+				DB64086C2852881E00C0B739 /* NavigateToViewButton.swift in Sources */,
 				DB64085B28518AA200C0B739 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

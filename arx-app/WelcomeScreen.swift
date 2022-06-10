@@ -18,6 +18,7 @@ struct WelcomeView: View {
 //                OnboardingView()
                 ScanCodeView()
                     .transition(.asymmetric(insertion: AnyTransition.opacity.combined(with: .slide), removal: .scale))
+                    .background(ColorConstants.arxNavy)
             } else {
                 ScanCodeView()
 //                GameNavigationView()
@@ -45,7 +46,7 @@ struct WelcomeScreen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5, alignment: .center)
                     .foregroundColor(ColorConstants.white)
-                    .rotationEffect(Angle.degrees(rotationAnimation ? 360 : 0)) //makes the box spin
+                    .scaleEffect(animate ? 1.1 : 1.0)
                 Spacer()
                 Button {
                     withAnimation(.easeInOut(duration: 2.9)) {

@@ -26,3 +26,15 @@ struct ColorConstants {
     static let blue5: Color = Color(hex: "#269ffc")
     
 }
+
+struct FontConstants {
+    static let mainFont: String = "AmericanTypewriter-SemiBold"
+    static let altFont1: String = "Chalkduster"
+    static let altFont2: String = "ChalkboardSE-Bold"
+    
+    // font sizes for ipad and iphone
+    static let ipadOnboardingFontSize: CGFloat = 36
+    
+    static let iphoneOnboardingFontSize: CGFloat = 24
+    
+}
